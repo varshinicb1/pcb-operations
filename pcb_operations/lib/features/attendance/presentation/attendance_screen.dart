@@ -133,7 +133,7 @@ class _CheckActions extends ConsumerWidget {
             final perm = await Geolocator.checkPermission();
             if (perm == LocationPermission.denied) await Geolocator.requestPermission();
             final pos = await Geolocator.getCurrentPosition(
-              locationSettings: const LocationSettings(accuracy: LocationAccuracy.high));
+              locationSettings: const LocationSettings(accuracy: LocationAccuracy.bestForNavigation));
             await ref.read(attendanceRepositoryProvider).checkOut(
               docId: a.id, latitude: pos.latitude, longitude: pos.longitude);
             ref.invalidate(todayAttendanceProvider);

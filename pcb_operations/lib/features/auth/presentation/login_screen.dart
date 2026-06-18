@@ -64,6 +64,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           'joinDate': DateTime.now().toIso8601String(),
           'createdAt': FieldValue.serverTimestamp(), 'updatedAt': FieldValue.serverTimestamp(),
         });
+        await FirebaseFirestore.instance.collection('notifications').add({
+          'type': 'new_registration', 'employeeId': uid, 'employeeName': name,
+          'branchId': 'default', 'read': false,
+          'createdAt': FieldValue.serverTimestamp(),
+        });
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Account created! Sign in now.'), backgroundColor: AppColors.success));

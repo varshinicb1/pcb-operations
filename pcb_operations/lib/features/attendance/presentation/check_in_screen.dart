@@ -38,7 +38,7 @@ class _CheckInScreenState extends ConsumerState<CheckInScreen> {
         }
       }
       final pos = await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(accuracy: LocationAccuracy.high));
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.bestForNavigation));
       setState(() { _position = pos; _step = 2; });
     } catch (_) {
       setState(() => _error = 'Could not get location. Enable GPS.');

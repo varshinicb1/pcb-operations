@@ -6,10 +6,12 @@ import 'package:intl/intl.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../attendance/data/attendance_repository.dart';
+import '../../attendance/data/leave_repository.dart';
 import '../../auth/data/employee_profile_repository.dart';
 import '../../auth/presentation/onboarding_screen.dart';
 import '../../attendance/presentation/admin_attendance_screen.dart';
 import '../../attendance/presentation/attendance_reports_screen.dart';
+import '../../attendance/presentation/leave_management_screen.dart';
 
 class AdminDashboard extends ConsumerWidget {
   const AdminDashboard({super.key});
@@ -95,7 +97,7 @@ class _ActionGrid extends StatelessWidget {
         _ActionTile(icon: Icons.assessment_rounded, label: 'Reports', color: AppColors.info, onTap: () =>
           Navigator.push(context, MaterialPageRoute(builder: (_) => const AttendanceReportsScreen()))),
         _ActionTile(icon: Icons.event_busy_rounded, label: 'Leave\nRequests', color: Colors.purple, onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) => const _Placeholder2(title: 'Leave Management')));
+          Navigator.push(context, MaterialPageRoute(builder: (_) => const LeaveManagementScreen()));
         }),
         _ActionTile(icon: Icons.person_add_rounded, label: 'Onboard\nWorker', color: AppColors.primary, onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) => const OnboardingScreen()));
