@@ -1,0 +1,66 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /branches/{branchId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && exists(/databases/$(database)/documents/employees/$(request.auth.uid))
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /employees/{employeeId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && exists(/databases/$(database)/documents/employees/$(request.auth.uid))
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin';
+      allow update: if request.auth != null
+        && (get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin'
+        || request.auth.uid == employeeId)
+        && request.resource.data.role == resource.data.role;
+      allow delete: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /attendance/{docId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.employeeId == request.auth.uid;
+      allow update: if request.auth != null
+        && (get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin'
+        || (resource.data.employeeId == request.auth.uid
+            && request.resource.data.employeeId == resource.data.employeeId));
+      allow delete: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /buses/{busId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role in ['admin', 'supervisor'];
+    }
+
+    match /production_updates/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role in ['admin', 'supervisor'];
+    }
+
+    match /daily_reports/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role in ['admin', 'supervisor'];
+    }
+
+    match /departments/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && get(/databases/$(database)/documents/employees/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

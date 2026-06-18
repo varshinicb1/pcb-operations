@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dart-flutter": {
+      "type": "local",
+      "command": ["C:\\tools\\flutter\\bin\\dart.bat", "mcp-server"],
+      "enabled": true,
+      "env": {
+        "PATH": "C:\\Users\\varsh\\AppData\\Local\\Pub\\Cache\\bin;C:\\tools\\flutter\\bin"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+name: pcb_operations
+description: "Prakash Coach Builders - Operations Management System"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+
+  # Navigation
+  go_router: ^15.1.2
+
+  # Firebase — all on Spark free tier
+  firebase_core:
+  firebase_auth:
+  cloud_firestore:
+
+  # UI & Animations
+  cupertino_icons: ^1.0.8
+  flutter_animate: ^4.5.2
+  shimmer: ^3.0.0
+  gap: ^3.0.1
+
+  # Charts
+  fl_chart: ^0.70.2
+
+  # Fonts
+
+  # Utilities
+  intl: ^0.20.2
+  json_annotation: ^4.12.0
+  connectivity_plus: ^6.1.4
+
+  # GPS & Location
+  geolocator: ^13.0.2
+  geocoding: 4.0.0
+
+  # Camera & Files
+  image_picker: ^1.1.2
+
+  # Export
+  excel: ^4.0.6
+  share_plus: ^10.1.4
+
+  # Storage
+  path_provider: ^2.1.5
+
+  # Voice Notes (Phase 1.1)
+  # record: ^5.2.1
+
+  # Responsive
+  flutter_screenutil: ^5.9.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.5
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/images/smk_logo.png"
+  background_color: "#111D44"
+  adaptive_icon_background: "#111D44"
+  adaptive_icon_foreground: "assets/images/smk_logo.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/smk_logo.png

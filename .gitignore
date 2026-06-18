@@ -1,0 +1,29 @@
+# Flutter
+build/
+.dart_tool/
+.packages
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+*.lock
+
+# Android
+android/app/google-services.json
+android/key.properties
+android/*.jks
+android/*.keystore
+
+# Firebase
+.firebase/
+.firebaserc
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# Secrets
+lib/firebase_options.dart

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260143067060",
+    "project_id": "pcb-operations-hub",
+    "storage_bucket": "pcb-operations-hub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260143067060:android:9d8908e5cfaefcedcacce1",
+        "android_client_info": {
+          "package_name": "com.prakashcoach.pcb_operations"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbAetFaSYnFvJPjZpNOp6HtiTKo7JOcP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
