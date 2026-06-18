@@ -21,6 +21,8 @@ Attendance _$AttendanceFromJson(Map<String, dynamic> json) => Attendance(
   checkOutLongitude: (json['checkOutLongitude'] as num?)?.toDouble(),
   checkOutAddress: json['checkOutAddress'] as String?,
   selfieUrl: json['selfieUrl'] as String?,
+  verificationStatus: json['verificationStatus'] as String?,
+  referenceFaceId: json['referenceFaceId'] as String?,
   status: json['status'] as String?,
   createdAt: json['createdAt'] == null
       ? null
@@ -46,6 +48,8 @@ Map<String, dynamic> _$AttendanceToJson(Attendance instance) =>
       'checkOutLongitude': instance.checkOutLongitude,
       'checkOutAddress': instance.checkOutAddress,
       'selfieUrl': instance.selfieUrl,
+      'verificationStatus': instance.verificationStatus,
+      'referenceFaceId': instance.referenceFaceId,
       'status': instance.status,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),

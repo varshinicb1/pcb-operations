@@ -35,6 +35,7 @@ class AttendanceRepository {
     required double longitude,
     String? address,
     String? selfieBase64,
+    String? verificationStatus,
   }) async {
     final docId = '${uid}_$today';
     final lateCutoff = '09:15';
@@ -44,7 +45,9 @@ class AttendanceRepository {
       id: docId, employeeId: uid, employeeName: employeeName,
       branchId: branchId, date: today,
       checkInTime: now, checkInLatitude: latitude, checkInLongitude: longitude,
-      checkInAddress: address, selfieUrl: selfieBase64,
+      checkInAddress: address,
+      selfieUrl: selfieBase64,
+      verificationStatus: verificationStatus ?? 'unverified',
       status: isLate ? 'late' : 'present',
       createdAt: DateTime.now(), updatedAt: DateTime.now(),
     );

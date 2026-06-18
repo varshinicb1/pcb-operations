@@ -18,6 +18,8 @@ class Attendance {
   final double? checkOutLongitude;
   final String? checkOutAddress;
   final String? selfieUrl;
+  final String? verificationStatus;
+  final String? referenceFaceId;
   final String? status;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -37,6 +39,8 @@ class Attendance {
     this.checkOutLongitude,
     this.checkOutAddress,
     this.selfieUrl,
+    this.verificationStatus,
+    this.referenceFaceId,
     this.status,
     this.createdAt,
     this.updatedAt,

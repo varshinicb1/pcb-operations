@@ -56,6 +56,7 @@ dependencies:
 
   # Responsive
   flutter_screenutil: ^5.9.3
+  google_mlkit_face_detection: ^0.13.2
 
 dev_dependencies:
   flutter_test:
