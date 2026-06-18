@@ -1,0 +1,11 @@
+{
+  // See AGENTS.md and README.md for full context
+  "project": "PCB Operations - Prakash Coach Builders",
+  "stack": "Flutter 3.44.2 + Firebase Spark",
+  "test_credentials": "admin@pcb.com / pcb@123456 (or self-register from login)",
+  "build": "flutter build apk --debug",
+  "analyze": "flutter analyze",
+  "device": "adb install -r build/app/outputs/flutter-apk/app-debug.apk",
+  "firebase_project": "pcb-operations-hub",
+  "firebase_console": "https://console.firebase.google.com/project/pcb-operations-hub"
+}
